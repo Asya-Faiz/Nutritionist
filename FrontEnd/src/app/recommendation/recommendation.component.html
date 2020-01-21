@@ -1,0 +1,11 @@
+<div class="recommendation_background">
+<div class="container">
+    <div class="row my-5 mx-0" *ngIf=persistService.brands>
+        YOUR FAVORITE BRANDS 
+    </div>
+    <div class="row m-3" *ngFor="let each of persistService.brands">
+        <a [routerLink]="['/brandRecommendation', each]">{{each | titlecase}}</a>
+    </div>
+</div>
+</div>
+

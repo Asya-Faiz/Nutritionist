@@ -1,0 +1,86 @@
+<div class="brand_recommendation_background">
+    <div class="container" *ngIf=persistService.brandRecommendation>
+        <div class="card-columns mt-5">
+            <div class="card" *ngFor="let each of persistService.brandRecommendation | paginate:{itemsPerPage: 13, currentPage:p};">
+                <div class="card-content">
+                    <h5 *ngIf=each.description>{{each.description |titlecase}}</h5>
+                    <!-- <p *ngIf=each.additionalDescription>{{each.additionalDescription}}</p> -->
+                    <p *ngIf=each.brandOwner>{{each.brandOwner}}</p>
+                    <!-- <p *ngIf=each.dataType>{{each.dataType}}</p>
+                    <p *ngIf=each.publishedDate>{{each.publishedDate}}</p> -->
+                    <div class="card-footer">
+                        <a (click)="fetchNutrients(each.fdcId)" class="btn btn-link">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-pagination m-4"> 
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container-fluid">
+<div *ngIf=persistService.brandRecommendation>
+    <div class="row m-5">
+        <div class="col"> -->
+        <!-- <mat-grid-list cols="5"> -->
+            <!-- <div *ngFor="let each of this.persistService.brandRecommendation | paginate:{itemsPerPage: 8, currentPage:p};">        
+            <div  class="card-deck">
+            <div class="card col-sm-12 col-md-4 col-lg-3">
+                <div class="card-body">
+                    <h5 *ngIf=each.description>{{each.description |titlecase}}</h5>
+                    <p *ngIf=each.additionalDescription>{{each.additionalDescription}}</p>
+                    <p *ngIf=each.brandOwner>{{each.brandOwner}}</p>
+                    <p *ngIf=each.dataType>{{each.dataType}}</p>
+                    <p *ngIf=each.publishedDate>{{each.publishedDate}}</p>
+                    <a (click)="fetchNutrients(each.fdcId)" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div> -->
+    <!-- </mat-grid-list> -->
+  <!-- </div>
+        <div class="m-3"> 
+            <pagination-controls style="text-align:right;" (pageChange)="p=$event"></pagination-controls>
+        </div>
+    </div> -->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- </div> -->
+        <!-- <h3>{{each.description}}</h3>
+        <button (click)="fetchNutrients(each.fdcId)">Details</button>
+        <h6>{{each.additionalDescription}}</h6>
+        <h5>Publised Date: {{each.publishedDate}}</h5>
+        <h5>Brand Owner: {{each.brandOwner}}</h5>
+        <h5>Data Type: {{each.dataType}}</h5>
+    </div> -->
+    <!-- <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> -->
+    

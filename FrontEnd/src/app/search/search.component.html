@@ -1,0 +1,20 @@
+<!-- <div class="container search_background">
+    <input type="text" [(ngModel)]="generalSearch"/>
+    <button (click)=fetch()>Search</button>
+</div> -->
+
+<div class="container search_background">
+    <div class="search_container">
+        <form (submit)=fetch()>
+            <input class="search_input" type="text" placeholder="Search Food" [(ngModel)]="generalSearch" name="generalSearch">
+        </form>
+    </div>
+    <!-- <div class="jumbotron">
+        <div class="container">
+            <h2>{{quote}}</h2>
+        </div>
+    </div> -->
+    
+</div>
+
+<!-- <app-search-result [list]="FoodList"></app-search-result> -->

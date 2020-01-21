@@ -1,0 +1,107 @@
+<div class="register_background container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 col-md-8 col-lg-5 mt-lg-5 ml-lg-5">
+            <mat-card class="register_container card">
+                <mat-card-header class="card-title">
+                    <mat-card-title>REGISTER</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card-body">
+                    <form [formGroup]='registerForm' #formDirective='ngForm' (ngSubmit)='registerSubmit(formDirective)'>
+                        <div class="form-group">
+                            <mat-form-field class="col-auto" appearance='outline'>
+                                <mat-label>Name</mat-label>
+                                <input matInput type='text' [formControl]='new_name'>
+                                <mat-error *ngIf="new_name.invalid && (new_name.touched || new_name.dirty)">
+                                    *Mandatory
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="col-auto" appearance='outline'>
+                                <mat-label>Email</mat-label>
+                                <input matInput type='text' [formControl]='new_email'>
+                                <mat-error *ngIf="new_email.invalid">
+                                    *Check email format
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="col-auto" appearance='outline'>
+                                <mat-label>Username</mat-label>
+                                <input matInput type='text' [formControl]='new_username'>
+                                <mat-error *ngIf="new_username.invalid && (new_username.touched || new_username.dirty)">
+                                    *Mandatory
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="col-auto" appearance='outline'>
+                                <mat-label>Password</mat-label>
+                                <input matInput type='password' [formControl]='new_password'>
+                                <mat-error *ngIf="new_password.hasError('minlength')">
+                                    *Minimun length of 8 characters
+                                </mat-error>
+                                <mat-error *ngIf="new_password.hasError('required')">
+                                    *Mandatory
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="col-auto" appearance='outline'>
+                                <mat-label>Confirm Password</mat-label>
+                                <input matInput type='password' [formControl]='confirm_password'>
+                                <mat-error *ngIf="confirm_password.hasError('minlength')">
+                                    *Minimun length of 8 characters
+                                </mat-error>
+                                <mat-error *ngIf="confirm_password.hasError('required')">
+                                    *Mandatory
+                                </mat-error>
+                            </mat-form-field>
+                            <button mat-button type="submit" [disabled]='!registerForm.valid'>Register</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class=register_form_div>
+    
+        <div>
+            <label> Name: <input class="name" matInput type="text" [formControl]='new_name'></label>
+            <small *ngIf='new_name.invalid && (new_name.touched || new_name.dirty)'>
+                <small *ngIf='new_name.errors.required' class="error-message">
+                    *Enter a name
+                </small>
+            </small>
+        </div>
+        <div>
+            <label> Email: <input class="email" matInput type="text" [formControl]='new_email'></label>
+            <small *ngIf='new_email.invalid && (new_email.touched || new_email.dirty)'>
+                <small *ngIf='new_email.errors.required' class="error-message">
+                    *Enter an email 
+                </small>
+            </small>
+        </div>
+        <div>
+            <label> New Username: <input class="username" matInput type="text" [formControl]='new_username'></label>
+            <small *ngIf='new_username.invalid && (new_username.touched || new_username.dirty)'>
+                <small *ngIf='new_username.errors.required' class="error-message">
+                    *Enter a username
+                </small>
+            </small>
+        </div>
+        <div>
+            <label> New Password: <input class="password" matInput type="password" [formControl]='new_password'></label>
+            <small *ngIf='new_password.invalid && (new_password.touched || new_password.dirty)'>
+                <small *ngIf='new_password.errors.required' class="error-message">
+                    *Enter a password
+                </small>
+            </small>
+        </div>
+        <div>
+            <label> Confirm New Password: <input class="password" matInput type="password" [formControl]='confirm_password'></label>
+            <small *ngIf='confirm_password.invalid && (confirm_password.touched || confirm_password.dirty)'>
+                <small *ngIf='confirm_password.errors.required' class="error-message">
+                    *Confirm password
+                </small>
+            </small>
+        </div>
+        <div><button type="submit" class="submit" mat-button [disabled]='!registerForm.valid'>Register</button></div>      
+    </form>
+  </div>
+     -->

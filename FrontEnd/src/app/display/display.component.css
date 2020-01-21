@@ -1,0 +1,40 @@
+table{
+   /* padding:2em;  */
+   width:100% ;
+   opacity: 0.8;
+   /* overflow-y: scroll; */
+}
+
+
+/* .table_container {
+    overflow-y: auto;
+    position: absolute;
+    height: 100%;
+} */
+
+.display_background{
+    /* position: fixed; */
+    overflow-y: hidden;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url("../../assets/img/bottom_yellow.jpg");
+    width: 100%;
+    height: auto;
+        
+    /* Set up positioning */
+    /* position: fixed; */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+
+} 
+
+th.mat-header-cell {
+    padding: 1em;
+}
+
+.card{
+    opacity:0.9;
+}

@@ -1,0 +1,14 @@
+.recommendation_background{
+    overflow: visible;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url("../../assets/img/left_yellow.jpg");
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    
+} 
