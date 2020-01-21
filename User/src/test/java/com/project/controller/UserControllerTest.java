@@ -31,6 +31,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = UserController.class)
 public class UserControllerTest {
@@ -64,7 +65,7 @@ public class UserControllerTest {
 	
 	@Test
 	public void testRegisterUserFailure() throws UserAlreadyExistsException, Exception{
-		when(userService.saveUser(any(User.class))).thenThrow(UserAlreadyExistsException.class);
+		when(userService.saveUser(Mockito.any(User.class))).thenThrow(UserAlreadyExistsException.class);
 		mockMvc.perform(post("/user/register").contentType(MediaType.APPLICATION_JSON).content(asJsonString(user)))
 				.andExpect(status().isConflict()).andDo(print());
 		verify(userService).saveUser(Mockito.any(User.class));
